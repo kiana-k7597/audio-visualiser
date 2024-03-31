@@ -3,8 +3,8 @@ import Sketch from "react-p5";
 
 const Visuals = () => {
   const amplitude = 100;
-  const wavelength = 40; // Increase this value to make the wave wider
-  const offsetX = useRef(0); // Use useRef for a mutable object that persists across renders
+  const wavelength = 40;
+  const offsetX = useRef(0);
 
   const setup = (p5, canvasParentRef) => {
     p5.createCanvas(500, 500).parent(canvasParentRef);
@@ -22,7 +22,7 @@ const Visuals = () => {
     }
     p5.endShape();
 
-    offsetX.current += 0.05; // Increment the current value of offsetX to animate the wave
+    offsetX.current += 0.05;
   };
 
   return <Sketch setup={setup} draw={draw} />;
